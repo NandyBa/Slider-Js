@@ -1,0 +1,4 @@
+.slider{position: relative;border: 1px solid #333;}
+.slider img{position: absolute;display:none;width: 100%;z-index: 1}
+.slider .retour{position: absolute;top: 50%;left:0;z-index: 3;font-size: 30px}
+.slider .suivant{position: absolute;top: 50%;right:0;z-index: 3;font-size: 30px}
