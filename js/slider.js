@@ -12,7 +12,8 @@ jQuery(function(){
 
 		animate_slider($slider, height, width);
 
-		$slider.prepend('<div class="retour"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span></div><div class="suivant"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></div>');	
+		$slider.prepend('<div class="retour"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span></div><div class="suivant"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></div><div class="info"></div>');	
+		show_info($slider);
 	})
 	$('.slider .view').show();
 	$('.slider').on('click','.suivant', function(){
@@ -21,7 +22,7 @@ jQuery(function(){
 		$view_next = $view.next();
 
 		if($view_next.length != 1){
-			$view_next = $slider.children(':nth-child(3)');
+			$view_next = $slider.children(':nth-child(4)');
 		}
 
 		sliderNewSixe = get_sliderNewSixe($view_next);
@@ -34,6 +35,7 @@ jQuery(function(){
 		animate_slider($slider, height, width);
 
 		change_slide($slider, $view);
+		show_info($slider);
 	}),
 	$('.slider').on('click','.retour', function(){
 		$slider = $(this).parent();
@@ -53,10 +55,11 @@ jQuery(function(){
 		animate_slider($slider, height, width);
 
 		change_slide($slider, $view);
+		show_info($slider);
 	});
 
 	/* Param
-	/	$view is the new image
+	/	$view is the a image
 	*/
 	function get_sliderNewSixe($view){
 		$slider = $view.parent();
@@ -96,5 +99,26 @@ jQuery(function(){
 		$slider.children('.view').show();
 		$curent_view.hide();
 		$curent_view.removeClass('view');
+	}
+
+	function show_info($slider){
+		$view = $slider.children('.view');
+		$info = $slider.children('.info');
+
+		if($view.data('title') || $view.data('description')){
+			$info.html('<h5>'+$view.data('title')+'</h5><p class="text-center">'+$view.data('description')+'</p>');
+			$slider.mouseenter(function(){
+				if($view.data('title')){
+					$info.slideDown(300);
+				}			
+			})
+			$slider.mouseleave(function(){
+				$info.slideUp(300);
+			})
+		}
+		else{
+			$slider.children('.info').html('');
+			$info.hide();
+		}
 	}
 });
