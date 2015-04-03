@@ -109,11 +109,11 @@ jQuery(function(){
 			$info.html('<h5>'+$view.data('title')+'</h5><p class="text-center">'+$view.data('description')+'</p>');
 			$slider.mouseenter(function(){
 				if($view.data('title')){
-					$info.slideDown(300);
+					$info.stop().slideDown(300);
 				}			
 			})
 			$slider.mouseleave(function(){
-				$info.slideUp(300);
+				$info.stop().slideUp(300);
 			})
 		}
 		else{
