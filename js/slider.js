@@ -4,7 +4,6 @@ jQuery(function(){
 	$('.slider').each(function(border_height){
 		$slider = $(this);
 		$view = $slider.children('.view');
-		ratio = $view.width() / $view.height();
 		
 		sliderNewSixe = get_sliderNewSixe($view);
 		height = sliderNewSixe.height;
@@ -63,6 +62,7 @@ jQuery(function(){
 	*/
 	function get_sliderNewSixe($view){
 		$slider = $view.parent();
+		ratio = $view.width() / $view.height();
 		if($view.data('width')){
 
 			width = $view.data('width');
