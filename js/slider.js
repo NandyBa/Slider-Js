@@ -11,11 +11,11 @@ jQuery(function(){
 
 		animate_slider($slider, height, width);
 
-		$slider.prepend('<div class="retour"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span></div><div class="suivant"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></div><div class="info"></div>');	
+		$slider.prepend('<div class="before"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span></div><div class="next"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></div><div class="info hidden-xs"></div>');	
 		show_info($slider);
 	})
 	$('.slider .view').show();
-	$('.slider').on('click','.suivant', function(){
+	$('.slider').on('click','.next', function(){
 		$slider = $(this).parent();
 		$view = $slider.children('.view');
 		$view_next = $view.next();
@@ -36,7 +36,7 @@ jQuery(function(){
 		change_slide($slider, $view);
 		show_info($slider);
 	}),
-	$('.slider').on('click','.retour', function(){
+	$('.slider').on('click','.before', function(){
 		$slider = $(this).parent();
 		$view = $slider.children('.view');
 		$view_prev = $view.prev('img');
