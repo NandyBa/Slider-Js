@@ -1,0 +1,23 @@
+{
+  "name": "Slider-Js",
+  "version": "1.0.0",
+  "description": "This a simple slider in Js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NandyBa/Slider-Js.git"
+  },
+  "author": "NandyBa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NandyBa/Slider-Js/issues"
+  },
+  "homepage": "https://github.com/NandyBa/Slider-Js",
+  "devDependencies": {
+    "gulp-concat": "^2.5.2",
+    "gulp-uglify": "^1.2.0"
+  }
+}

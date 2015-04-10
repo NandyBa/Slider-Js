@@ -7,6 +7,9 @@ You must create div with class slider and put inside your img
 JQuery
 Boostsrap
 
+#dev dependencies
+gulp, gulp-uglify, gulp-concat
+
 #Utilization
 
 ``` html
