@@ -24,3 +24,7 @@ gulp.task('minify-css', function() {
         .pipe(minifyCss('main.min.css'))
         .pipe(gulp.dest('dist/css'));
 });
+
+// Default
+// Run Compact-js and Minify-css task.
+gulp.task('default', ['compact-js', 'minify-css'], function() {});
