@@ -6,7 +6,8 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyCss   =   require('gulp-minify-css'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename');
  
 
  
@@ -21,7 +22,8 @@ gulp.task('compact-js', function() {
 // Minify-css
 gulp.task('minify-css', function() {
     return gulp.src('css/**/*.css')
-        .pipe(minifyCss('main.min.css'))
+        .pipe(minifyCss())
+        .pipe(rename('main.min.css'))
         .pipe(gulp.dest('dist/css'));
 });
 

@@ -8,7 +8,7 @@ JQuery
 Boostsrap
 
 #dev dependencies
-gulp, gulp-uglify, gulp-concat, gulp-minify-css
+gulp, gulp-uglify, gulp-concat, gulp-minify-css, gulp-rename
 
 #Utilization
 
